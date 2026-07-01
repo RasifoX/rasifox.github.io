@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rasifox, freelance developer for websites, bots, and automations</title>
+  <meta name="description" content="Freelance developer building websites, Discord and Telegram bots, web scrapers, and automations. TypeScript first, also Python, C and C++. I send a small working demo before you pay anything.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://api.github.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">rasifox</a>
+    <div class="header-right">
+      <nav>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="toggles">
+        <div class="toggle-group" role="group" data-i18n-aria-label="aria.language" aria-label="Language">
+          <button type="button" class="toggle" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" class="toggle" data-lang-btn="tr" aria-pressed="false">TR</button>
+        </div>
+        <div class="toggle-group" role="group" data-i18n-aria-label="aria.currency" aria-label="Currency">
+          <button type="button" class="toggle" data-cur-btn="usd" aria-pressed="true">$</button>
+          <button type="button" class="toggle" data-cur-btn="try" aria-pressed="false">₺</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="kicker" data-i18n="hero.kicker">Freelance developer</p>
+      <h1 data-i18n="hero.h1">Custom software that fits the problem you actually have.</h1>
+      <p class="lead" data-i18n="hero.lead">
+        Self-taught developer. I build websites, Discord and Telegram bots, web scrapers,
+        and automations. Mostly TypeScript and JavaScript, with Python, C and C++ when the
+        job calls for it.
+      </p>
+      <p class="trust-line" data-i18n="hero.trust">I send a small working demo before you pay anything.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="mailto:rasifox34@gmail.com" data-i18n="hero.start">Start a project</a>
+        <a class="btn ghost" href="https://github.com/RasifoX" rel="noopener" data-i18n="hero.github">See the code on GitHub</a>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <p class="kicker" data-i18n="work.kicker">01 / Work</p>
+      <h2 data-i18n="work.h2">Code I wrote and ship publicly</h2>
+      <p class="section-note" data-i18n="work.note">Live from GitHub, so the language, stars, and last update are always current.</p>
+      <div id="projects" class="projects" aria-live="polite"></div>
+    </section>
+
+    <section id="services" class="section">
+      <p class="kicker" data-i18n="services.kicker">02 / Services</p>
+      <h2 data-i18n="services.h2">Services and pricing</h2>
+      <p class="section-note" data-i18n="services.note">Price ranges below, and you can switch the currency at the top. Your fixed price is agreed before any work starts.</p>
+
+      <ul class="price-list">
+        <li class="price-row">
+          <div class="price-info">
+            <h3 data-i18n="svc.site.title">Company website</h3>
+            <p data-i18n="svc.site.desc">A clean, responsive informational site: a few pages, contact form, fast and mobile friendly.</p>
+          </div>
+          <div class="price-figure">
+            <span class="usd" data-i18n="price.site.usd">$300 to $600</span>
+            <span class="try" data-i18n="price.site.try">about 10,500 to 21,000 TRY</span>
+          </div>
+        </li>
+        <li class="price-row">
+          <div class="price-info">
+            <h3 data-i18n="svc.app.title">Web app or custom tool</h3>
+            <p data-i18n="svc.app.desc">An interactive app with a backend and a database: dashboards, internal tools, small products.</p>
+          </div>
+          <div class="price-figure">
+            <span class="usd" data-i18n="price.app.usd">$500 to $1,200</span>
+            <span class="try" data-i18n="price.app.try">about 17,500 to 42,000 TRY</span>
+          </div>
+        </li>
+        <li class="price-row">
+          <div class="price-info">
+            <h3 data-i18n="svc.store.title">Online store</h3>
+            <p data-i18n="svc.store.desc">A product ordering site: catalogue, cart, checkout, and the integrations to run it.</p>
+          </div>
+          <div class="price-figure">
+            <span class="usd" data-i18n="price.store.usd">$750 to $1,800</span>
+            <span class="try" data-i18n="price.store.try">about 26,000 to 63,000 TRY</span>
+          </div>
+        </li>
+        <li class="price-row">
+          <div class="price-info">
+            <h3 data-i18n="svc.bot.title">Discord or Telegram bot</h3>
+            <p data-i18n="svc.bot.desc">A self-hostable bot for moderation, utility, or connecting your community to other services.</p>
+          </div>
+          <div class="price-figure">
+            <span class="usd" data-i18n="price.bot.usd">$90 to $300</span>
+            <span class="try" data-i18n="price.bot.try">about 3,200 to 10,500 TRY</span>
+          </div>
+        </li>
+        <li class="price-row">
+          <div class="price-info">
+            <h3 data-i18n="svc.scraper.title">Web scraper</h3>
+            <p data-i18n="svc.scraper.desc">Pull structured data from a site into clean CSV or JSON, with pagination and rate limiting.</p>
+          </div>
+          <div class="price-figure">
+            <span class="usd" data-i18n="price.scraper.usd">$150 to $500</span>
+            <span class="try" data-i18n="price.scraper.try">about 5,300 to 17,500 TRY</span>
+          </div>
+        </li>
+        <li class="price-row">
+          <div class="price-info">
+            <h3 data-i18n="svc.automation.title">Automation and integrations</h3>
+            <p data-i18n="svc.automation.desc">Connect the tools you already use and automate the repetitive parts. APIs, workflows, scripts.</p>
+          </div>
+          <div class="price-figure">
+            <span class="usd" data-i18n="price.automation.usd">$150 to $600</span>
+            <span class="try" data-i18n="price.automation.try">about 5,300 to 21,000 TRY</span>
+          </div>
+        </li>
+        <li class="price-row hourly-row">
+          <div class="price-info">
+            <h3 data-i18n="svc.small.title">Small jobs and fixes</h3>
+            <p data-i18n="svc.small.desc">Quick changes, bug fixes, and one-off tasks, billed by the hour.</p>
+          </div>
+          <div class="price-figure">
+            <span class="usd" data-i18n="price.small.usd">$18 to $25 / hour</span>
+            <span class="try" data-i18n="price.small.try">about 630 to 880 TRY / hour</span>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="guarantees">
+        <li data-i18n="guarantee.price">Fixed price agreed before any work starts.</li>
+        <li data-i18n="guarantee.own">You own all the code and repos.</li>
+        <li data-i18n="guarantee.reply">I reply within 24 hours.</li>
+      </ul>
+
+      <div class="cta-band">
+        <p data-i18n="cta.text">Not sure which one fits? Tell me what you need and I will send a small working demo before you pay anything.</p>
+        <a class="btn primary" href="mailto:rasifox34@gmail.com" data-i18n="cta.button">Get a fixed quote</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="kicker" data-i18n="contact.kicker">03 / Contact</p>
+      <h2 data-i18n="contact.h2">Get in touch</h2>
+      <p data-i18n="contact.text">Available for freelance work. Tell me what you need and I will reply with an honest timeline and a fixed price. Payment via Wise or bank transfer.</p>
+      <div class="contact-links">
+        <a class="btn primary" href="mailto:rasifox34@gmail.com" data-i18n="contact.start">Start a project</a>
+        <a class="contact-email" href="mailto:rasifox34@gmail.com">rasifox34@gmail.com</a>
+      </div>
+      <p class="contact-alt"><span data-i18n="contact.alt">Prefer to read the code first? </span><a href="https://github.com/RasifoX" rel="noopener">github.com/RasifoX</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="foot-brand">rasifox</span>
+    <a href="https://github.com/RasifoX" rel="noopener">GitHub</a>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
