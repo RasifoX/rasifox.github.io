@@ -5,8 +5,8 @@
 
 const DICT = {
   en: {
-    "meta.title": "rasifox, freelance developer for websites, bots, and automations",
-    "meta.description": "Freelance developer building websites, Discord and Telegram bots, web scrapers, and automations. TypeScript first, also Python, C and C++. I send a small working demo before you pay anything.",
+    "meta.title": "RasifoX, freelance developer for websites, bots, and automations",
+    "meta.description": "Freelance developer building websites, Discord and Telegram bots, web scrapers, and automations. TypeScript first, also Python, C and C++. You try a working demo before you commit.",
 
     "aria.language": "Language",
     "aria.currency": "Currency",
@@ -22,11 +22,11 @@ const DICT = {
     "hero.start": "Start a project",
     "hero.github": "See the code on GitHub",
 
-    "work.kicker": "01 / Work",
+    "work.kicker": "Recent work",
     "work.h2": "Code I wrote and ship publicly",
     "work.note": "Live from GitHub, so the language, stars, and last update are always current.",
 
-    "services.kicker": "02 / Services",
+    "services.kicker": "What I build",
     "services.h2": "Services and pricing",
     "services.note": "Price ranges below, and you can switch the currency at the top. Your fixed price is agreed before any work starts.",
 
@@ -64,16 +64,17 @@ const DICT = {
     "guarantee.own": "You own all the code and repos.",
     "guarantee.reply": "I reply within 24 hours.",
 
-    "cta.text": "Not sure which one fits? Tell me what you need and I will send a small working demo before you pay anything.",
+    "cta.text": "Not sure which one fits? Tell me what you need and I will scope it, quote a fixed price, and get something working in front of you first.",
     "cta.button": "Get a fixed quote",
 
-    "contact.kicker": "03 / Contact",
+    "contact.kicker": "Let's talk",
     "contact.h2": "Get in touch",
     "contact.text": "Available for freelance work. Tell me what you need and I will reply with an honest timeline and a fixed price. Payment via Wise or bank transfer.",
     "contact.start": "Start a project",
     "contact.alt": "Prefer to read the code first? ",
 
     "card.link": "View on GitHub",
+    "card.star": "star",
     "card.stars": "stars",
     "updated.today": "updated today",
     "updated.days": "updated {n} days ago",
@@ -83,8 +84,8 @@ const DICT = {
     "updated.years": "updated {n} years ago",
   },
   tr: {
-    "meta.title": "rasifox, web siteleri, botlar ve otomasyonlar için freelance yazılımcı",
-    "meta.description": "Web siteleri, Discord ve Telegram botları, veri kazıyıcılar ve otomasyonlar geliştiren freelance yazılımcı. Öncelikle TypeScript, ayrıca Python, C ve C++. Siz ödeme yapmadan önce çalışan küçük bir demo gönderiyorum.",
+    "meta.title": "RasifoX, web siteleri, botlar ve otomasyonlar için freelance yazılımcı",
+    "meta.description": "Web siteleri, Discord ve Telegram botları, veri kazıyıcılar ve otomasyonlar geliştiren freelance yazılımcı. Öncelikle TypeScript, ayrıca Python, C ve C++. İşe başlamadan önce çalışan bir demoyu deneyebilirsiniz.",
 
     "aria.language": "Dil",
     "aria.currency": "Para birimi",
@@ -100,19 +101,19 @@ const DICT = {
     "hero.start": "Projeye başlayın",
     "hero.github": "Kodları GitHub'da görün",
 
-    "work.kicker": "01 / Projeler",
+    "work.kicker": "Son işler",
     "work.h2": "Yazdığım ve herkese açık yayınladığım kodlar",
     "work.note": "Doğrudan GitHub'dan geliyor; dil, yıldız sayısı ve son güncelleme her zaman günceldir.",
 
-    "services.kicker": "02 / Hizmetler",
+    "services.kicker": "Neler yapıyorum",
     "services.h2": "Hizmetler ve fiyatlar",
     "services.note": "Fiyat aralıkları aşağıda; para birimini üstten değiştirebilirsiniz. Size vereceğim sabit fiyat, işe başlamadan önce netleştirilir.",
 
     "svc.site.title": "Kurumsal web sitesi",
-    "svc.site.desc": "Sade ve responsive bir tanıtım sitesi: birkaç sayfa, iletişim formu, hızlı ve mobil uyumlu.",
+    "svc.site.desc": "Sade, hızlı ve mobil uyumlu bir tanıtım sitesi: birkaç sayfa ve iletişim formu.",
     "svc.app.title": "Web uygulaması veya özel araç",
     "svc.app.desc": "Arka uç ve veritabanı olan etkileşimli bir uygulama: panolar, şirket içi araçlar, küçük ürünler.",
-    "svc.store.title": "Online mağaza",
+    "svc.store.title": "Çevrimiçi mağaza",
     "svc.store.desc": "Ürün sipariş sitesi: katalog, sepet, ödeme adımı ve işletmek için gereken entegrasyonlar.",
     "svc.bot.title": "Discord veya Telegram botu",
     "svc.bot.desc": "Moderasyon, yardımcı işlevler veya topluluğunuzu başka servislere bağlamak için kendi sunucunuzda barındırabileceğiniz bot.",
@@ -142,16 +143,17 @@ const DICT = {
     "guarantee.own": "Tüm kodlar ve repolar size ait olur.",
     "guarantee.reply": "24 saat içinde yanıt veririm.",
 
-    "cta.text": "Hangisinin size uyduğundan emin değil misiniz? İhtiyacınızı anlatın; siz ödeme yapmadan önce çalışan küçük bir demo göndereyim.",
+    "cta.text": "Hangisinin size uyduğundan emin değil misiniz? İhtiyacınızı anlatın; kapsamı çıkarayım, sabit fiyat vereyim ve önce çalışan bir şeyi karşınıza koyayım.",
     "cta.button": "Sabit fiyat teklifi alın",
 
-    "contact.kicker": "03 / İletişim",
+    "contact.kicker": "Konuşalım",
     "contact.h2": "İletişime geçin",
     "contact.text": "Freelance işlere açığım. İhtiyacınızı anlatın; dürüst bir zaman çizelgesi ve sabit bir fiyatla dönüş yapayım. Ödeme Wise veya banka havalesi ile.",
     "contact.start": "Projeye başlayın",
     "contact.alt": "Önce kodları incelemek ister misiniz? ",
 
     "card.link": "GitHub'da görüntüle",
+    "card.star": "yıldız",
     "card.stars": "yıldız",
     "updated.today": "bugün güncellendi",
     "updated.days": "{n} gün önce güncellendi",

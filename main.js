@@ -115,7 +115,8 @@ function renderCard(item, live, index) {
     meta.appendChild(langEl);
   }
   if (live && live.stargazers_count > 0) {
-    meta.appendChild(el("span", null, `${live.stargazers_count} ${tr("card.stars")}`));
+    const starKey = live.stargazers_count === 1 ? "card.star" : "card.stars";
+    meta.appendChild(el("span", null, `${live.stargazers_count} ${tr(starKey)}`));
   }
   if (live && live.pushed_at) {
     meta.appendChild(el("span", null, formatUpdated(live.pushed_at)));

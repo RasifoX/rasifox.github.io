@@ -4,12 +4,12 @@
   --surface: #FCFAF5;
   --border: #E4DDD0;
   --text: #17222E;
-  --muted: #55606C;
+  --muted: #50596A;
   --accent: #0E7C6B;
   --accent-strong: #0B6156;
   --accent-soft: rgba(14, 124, 107, 0.10);
   --secondary: #B25B38;
-  --secondary-text: #9E4E2F;
+  --secondary-text: #8A4227;
 
   /* Spacing scale, 4px base, ~1.5x steps, used with intent */
   --s1: 4px;
@@ -21,12 +21,12 @@
   --s7: 84px;
 
   --maxw: 1080px;
-  --radius: 2px;
+  --radius: 8px;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
-  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, monospace;
+  /* Grounded, humanist pairing: Source Serif for headings, Source Sans for everything else. */
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -55,59 +55,63 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 600; }
 
-/* Header: solid bg, single hairline bottom rule, no blur */
+/* Header: brand left, nav centre, toggles right. Grid so it never wraps raggedly. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--s4);
   padding: var(--s3) var(--s5);
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 
 .brand {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 19px;
   color: var(--text);
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 .brand:hover { text-decoration: none; color: var(--accent-strong); }
 
-.header-right {
+.site-nav {
   display: flex;
-  align-items: center;
-  gap: var(--s4);
+  justify-content: center;
+  gap: var(--s5);
 }
-
-.site-header nav a {
+.site-nav a {
   color: var(--muted);
-  margin-left: var(--s4);
   font-size: 15px;
 }
-.site-header nav a:hover { color: var(--text); text-decoration: none; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
 
-/* Toggles: understated mono segmented controls that match the header */
-.toggles { display: flex; align-items: center; gap: var(--s3); }
+/* Toggles: quiet segmented controls, comfortable to tap */
+.toggles { display: flex; align-items: center; gap: var(--s3); flex-shrink: 0; }
 .toggle-group {
   display: inline-flex;
+  align-items: stretch;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
 }
 .toggle {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1;
   color: var(--muted);
   background: transparent;
   border: 0;
-  padding: 6px 10px;
+  padding: 8px 13px;
+  min-height: 36px;
   cursor: pointer;
   transition: color 160ms var(--ease), background 160ms var(--ease);
 }
@@ -124,12 +128,14 @@ body[data-currency="try"] .price-figure .usd { display: none; }
 
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
 
-/* Mono kickers, editorial hand */
+/* Scroll targets clear the sticky header on in-page navigation */
+.section, .hero { scroll-margin-top: 96px; }
+
+/* Kicker: small confident eyebrow, sans */
 .kicker {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: var(--accent-strong);
   margin: 0 0 var(--s3);
 }
@@ -140,7 +146,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   font-size: clamp(34px, 5vw, 56px);
   line-height: 1.08;
   margin: 0 0 var(--s4);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   max-width: 16ch;
 }
 .lead {
@@ -150,12 +156,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   margin: 0 0 var(--s4);
 }
 .trust-line {
-  font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: 600;
   color: var(--text);
   margin: 0 0 var(--s5);
-  padding-left: var(--s3);
-  border-left: 2px solid var(--accent);
   max-width: 60ch;
 }
 
@@ -169,7 +173,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   border-radius: var(--radius);
   color: var(--text);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   background: var(--surface);
   cursor: pointer;
   transition: border-color 180ms var(--ease), transform 180ms var(--ease), background 180ms var(--ease);
@@ -181,7 +185,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   background: var(--accent);
   border-color: var(--accent);
   color: #FFFFFF;
-  font-weight: 600;
 }
 .btn.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
 
@@ -223,21 +226,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
 .project-card.featured h3 { font-size: 26px; }
 .project-card.featured p { font-size: 17px; max-width: 62ch; }
 
-/* Repo slug in mono: engineer texture */
 .repo-slug {
-  font-family: var(--font-mono);
   font-size: 13px;
+  font-weight: 600;
   color: var(--muted);
   margin: 0 0 var(--s3);
-}
-.repo-slug::before { content: "~/"; color: var(--accent-strong); }
-
-.project-card .repo-link {
-  margin-top: auto;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--accent-strong);
 }
 
 .project-meta {
@@ -245,63 +238,66 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   gap: var(--s4);
   flex-wrap: wrap;
   margin-top: auto;
-  padding: var(--s3) 0;
-  font-family: var(--font-mono);
+  padding: var(--s3) 0 0;
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 13px;
   font-variant-numeric: tabular-nums;
 }
-.project-card .repo-link { margin-top: 0; padding-top: var(--s2); }
 .project-meta .lang { display: inline-flex; align-items: center; gap: var(--s2); }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
 
-/* Tags: mono text, no soft pills, crisp corners */
-.tags { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0 0 var(--s3); }
-.tag {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--secondary-text);
-  border: 1px solid var(--border);
-  background: transparent;
-  padding: 2px 8px;
-  border-radius: var(--radius);
+.project-card .repo-link {
+  padding-top: var(--s3);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-strong);
 }
 
-/* Pricing as a labelled price list, not a uniform card grid */
-.price-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+/* Tags: quiet outlined chips */
+.tags { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0 0 var(--s3); }
+.tag {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+/* Pricing: distinct cards in a responsive grid */
+.price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--s4);
+}
 .price-row {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s5);
-  padding: var(--s4) 0;
-  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  gap: var(--s3);
+  padding: var(--s5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
-.price-info { max-width: 52ch; }
-.price-info h3 { margin: 0 0 var(--s1); font-size: 19px; }
+.price-info h3 { margin: 0 0 var(--s2); font-size: 19px; line-height: 1.2; }
 .price-info p { margin: 0; color: var(--muted); font-size: 15px; }
 .price-figure {
-  text-align: right;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  margin-top: auto;
+  padding-top: var(--s3);
 }
-.price-figure .usd {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 17px;
+.price-figure .usd,
+.price-figure .try {
+  font-size: 22px;
+  font-weight: 600;
   color: var(--text);
   font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+  line-height: 1.2;
 }
-.price-figure .try {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
+.price-row.hourly-row { grid-column: 1 / -1; }
 
 .guarantees {
   list-style: none;
@@ -310,12 +306,20 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   display: flex;
   flex-wrap: wrap;
   gap: var(--s3) var(--s5);
-  font-family: var(--font-mono);
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--text);
 }
 .guarantees li { position: relative; padding-left: var(--s4); }
-.guarantees li::before { content: "+"; position: absolute; left: 0; color: var(--accent-strong); }
+.guarantees li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
 
 /* Mid-page CTA band where purchase intent peaks */
 .cta-band {
@@ -336,8 +340,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
 .contact p { color: var(--muted); max-width: 60ch; }
 .contact-links { margin-top: var(--s5); }
 .contact-email {
-  font-family: var(--font-mono);
   font-size: 15px;
+  font-weight: 600;
   color: var(--text);
 }
 .contact-alt { margin-top: var(--s4); font-size: 15px; color: var(--muted); }
@@ -352,28 +356,38 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   color: var(--muted);
   font-size: 14px;
 }
-.foot-brand { font-family: var(--font-mono); }
+.foot-brand { font-weight: 700; color: var(--text); }
 
 @media (max-width: 720px) {
   .projects { grid-template-columns: 1fr; }
   .project-card.featured { grid-column: auto; }
-  .price-row { flex-direction: column; gap: var(--s2); }
-  .price-figure { text-align: left; }
   .cta-band { flex-direction: column; align-items: flex-start; }
 }
 
-@media (max-width: 640px) {
-  .site-header { flex-wrap: wrap; gap: var(--s2) var(--s3); }
-  .header-right { gap: var(--s3); flex-wrap: wrap; justify-content: flex-end; }
+/* Mobile header: brand + toggles on one tidy row, nav on a centred second row */
+@media (max-width: 600px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+    gap: var(--s2) var(--s3);
+    padding: var(--s3) var(--s4);
+  }
+  .brand { grid-row: 1; grid-column: 1; }
+  .toggles { grid-row: 1; grid-column: 2; }
+  .site-nav {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    justify-content: center;
+    gap: var(--s5);
+  }
+  .toggle { min-height: 42px; padding: 10px 15px; }
+  .section, .hero { scroll-margin-top: 120px; }
 }
 
 @media (max-width: 520px) {
   body { font-size: 16px; }
   .hero { padding: var(--s6) 0 var(--s5); }
   .section { padding: var(--s6) 0; }
-  .site-header { padding: var(--s3) var(--s4); }
   main { padding: 0 var(--s4); }
-  .site-header nav a { margin-left: var(--s3); }
 }
 
 @media (prefers-reduced-motion: reduce) {
