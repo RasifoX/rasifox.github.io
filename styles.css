@@ -104,14 +104,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; }
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1;
   color: var(--muted);
   background: transparent;
   border: 0;
-  padding: 6px 11px;
-  min-height: 30px;
+  padding: 4px 9px;
+  min-height: 26px;
   cursor: pointer;
   transition: color 160ms var(--ease), background 160ms var(--ease);
 }
@@ -379,7 +379,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
     justify-content: center;
     gap: var(--s5);
   }
-  .toggle { min-height: 34px; padding: 7px 12px; }
+  .toggle { min-height: 28px; padding: 5px 9px; }
   .section, .hero { scroll-margin-top: 120px; }
 }
 
