@@ -1,0 +1,70 @@
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+#intro .intro-panel {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50.5%;
+  background: var(--bg, #F5F2EB);
+  will-change: transform;
+}
+#intro .intro-panel.top {
+  top: 0;
+  animation: intro-top 0.55s cubic-bezier(0.7, 0, 0.25, 1) 1.5s forwards;
+}
+#intro .intro-panel.bottom {
+  bottom: 0;
+  animation: intro-bottom 0.55s cubic-bezier(0.7, 0, 0.25, 1) 1.5s forwards;
+}
+
+#intro .intro-mark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 600;
+  font-size: clamp(44px, 10vw, 92px);
+  letter-spacing: -0.015em;
+  color: var(--text, #17222E);
+  animation: intro-mark-in 0.5s ease-out both, intro-mark-out 0.4s ease-in 1.55s forwards;
+}
+#intro .intro-mark .mid {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  animation: intro-mid 1.55s cubic-bezier(0.6, 0.15, 0.2, 1) 0.1s both;
+}
+
+@keyframes intro-mark-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes intro-mark-out {
+  to { opacity: 0; }
+}
+@keyframes intro-mid {
+  0%   { max-width: 0;    opacity: 0; }
+  26%  { max-width: 4em;  opacity: 1; }
+  58%  { max-width: 4em;  opacity: 1; }
+  84%  { max-width: 0;    opacity: 0; }
+  100% { max-width: 0;    opacity: 0; }
+}
+@keyframes intro-top {
+  to { transform: translateY(-101%); }
+}
+@keyframes intro-bottom {
+  to { transform: translateY(101%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #intro { display: none !important; }
+}
