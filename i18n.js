@@ -69,7 +69,7 @@ const DICT = {
 
     "contact.kicker": "Let's talk",
     "contact.h2": "Get in touch",
-    "contact.text": "Available for freelance work. Tell me what you need and I will reply with an honest timeline and a fixed price. Payment via Wise or bank transfer.",
+    "contact.text": "Available for freelance work. Tell me what you need and I will reply with an honest timeline and a fixed price. Payment via Wise, Payoneer, or bank transfer.",
     "contact.start": "Start a project",
     "contact.alt": "Prefer to read the code first? ",
 
@@ -142,7 +142,7 @@ const DICT = {
 
     "contact.kicker": "Konuşalım",
     "contact.h2": "İletişime geçin",
-    "contact.text": "Freelance işlere açığım. İhtiyacınızı anlatın; dürüst bir zaman çizelgesi ve sabit bir fiyatla dönüş yapayım. Ödeme Wise veya banka havalesi ile.",
+    "contact.text": "Freelance işlere açığım. İhtiyacınızı anlatın; dürüst bir zaman çizelgesi ve sabit bir fiyatla dönüş yapayım. Ödeme Wise, Payoneer veya banka havalesi ile.",
     "contact.start": "Projeye başlayın",
     "contact.alt": "Önce kodları incelemek ister misiniz? ",
 

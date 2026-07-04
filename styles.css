@@ -24,6 +24,9 @@
   --maxw: 1200px;
   --radius: 0px;
 
+  /* Approx sticky header height, used to size the hero to the first viewport */
+  --header-h: 64px;
+
   --font-display: "Archivo Black", "Space Grotesk", Impact, sans-serif;
   --font-body: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   /* Retired Space Mono: technical voice now carried by tight uppercase Space Grotesk 700 */
@@ -158,11 +161,14 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   border: var(--bw-thin) solid var(--line);
 }
 
-/* Hero: massive display type */
+/* Hero: massive display type, sized to fit the first viewport */
 .hero {
-  padding: var(--s7) 0 var(--s6);
+  min-height: calc(100svh - var(--header-h));
+  padding: var(--s5) 0 var(--s4);
   position: relative;
   border-bottom: var(--bw) solid var(--line);
+  display: flex;
+  flex-direction: column;
 }
 .hero-index {
   font-family: var(--font-mono);
@@ -170,15 +176,17 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--muted);
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s3);
 }
 .hero h1 {
   font-size: clamp(32px, 5.2vw, 64px);
   line-height: 0.94;
-  margin: var(--s3) 0 var(--s5);
+  margin: var(--s2) 0 var(--s4);
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  max-width: 15ch;
+  /* Spread across the full column so the headline is fewer, wider lines and
+     the hero stays short enough to keep both CTAs above the fold. */
+  max-width: none;
 }
 .lead {
   font-size: clamp(17px, 2vw, 21px);
@@ -199,6 +207,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
 }
 
 .hero-actions, .contact-links { display: flex; gap: var(--s3); flex-wrap: wrap; align-items: center; }
+.hero-actions { margin-bottom: var(--s5); }
 
 /* Marquee-ish skills strip under hero */
 .hero-stack {
@@ -206,7 +215,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
   display: flex;
   flex-wrap: wrap;
   gap: 0;
-  margin: var(--s6) 0 0;
+  margin: var(--s5) 0 0;
+  margin-top: auto;
   padding: 0;
   border: var(--bw) solid var(--line);
   border-bottom: 0;
@@ -254,13 +264,13 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--s5); }
 .btn.ghost:hover { background: var(--ink); color: var(--paper); }
 
 /* Sections */
-.section { padding: var(--s7) 0; border-bottom: var(--bw) solid var(--line); }
+.section { padding: var(--s6) 0; border-bottom: var(--bw) solid var(--line); }
 .section-head {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--s5);
   align-items: start;
-  margin: 0 0 var(--s6);
+  margin: 0 0 var(--s5);
 }
 .section-num {
   font-family: var(--font-display);
