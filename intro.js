@@ -16,10 +16,18 @@
     remove();
   };
 
-  var bottom = intro.querySelector(".intro-panel.bottom");
-  if (bottom) bottom.addEventListener("animationend", finish);
+  // The acid wipe sweeps out last, so its animationend marks the true end.
+  var wipe = intro.querySelector(".intro-wipe");
+  if (wipe) {
+    wipe.addEventListener("animationend", function (e) {
+      if (e.animationName === "intro-wipe-out") finish();
+    });
+  }
 
-  // safety net in case animationend does not fire, and tap to skip
-  setTimeout(finish, 2500);
+  // safety net in case animationend does not fire, and tap or key to skip
+  setTimeout(finish, 2600);
   intro.addEventListener("click", finish);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" || e.key === "Enter" || e.key === " ") finish();
+  });
 })();

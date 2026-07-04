@@ -1,5 +1,5 @@
-// Featured projects, in the order they should appear. The blurb and tags are
-// curated here; stars, language and last update are pulled live from GitHub.
+// Featured projects, in the order they should appear. The blurbs and tags are
+// curated here; the language and star count are pulled live from GitHub.
 const FEATURED = [
   {
     repo: "scrapekit",
@@ -76,18 +76,6 @@ function el(tag, className, text) {
   return node;
 }
 
-function formatUpdated(iso) {
-  if (!iso) return "";
-  const then = new Date(iso).getTime();
-  const days = Math.round((Date.now() - then) / 86400000);
-  if (days <= 1) return tr("updated.today");
-  if (days < 30) return tr("updated.days").replace("{n}", days);
-  const months = Math.round(days / 30);
-  if (months < 12) return tr(months === 1 ? "updated.month" : "updated.months").replace("{n}", months);
-  const years = Math.round(months / 12);
-  return tr(years === 1 ? "updated.year" : "updated.years").replace("{n}", years);
-}
-
 function renderCard(item, live, index) {
   const uiLang = activeLang();
   const title = (uiLang === "tr" && item.titleTr) || item.title || item.repo;
@@ -95,6 +83,9 @@ function renderCard(item, live, index) {
 
   const card = el("article", "card project-card");
   if (index === 0) card.classList.add("featured");
+  const idx = el("span", "card-index", String(index + 1).padStart(2, "0"));
+  idx.setAttribute("aria-hidden", "true");
+  card.appendChild(idx);
   card.appendChild(el("h3", null, title));
   card.appendChild(el("div", "repo-slug", item.repo));
 
@@ -118,13 +109,11 @@ function renderCard(item, live, index) {
     const starKey = live.stargazers_count === 1 ? "card.star" : "card.stars";
     meta.appendChild(el("span", null, `${live.stargazers_count} ${tr(starKey)}`));
   }
-  if (live && live.pushed_at) {
-    meta.appendChild(el("span", null, formatUpdated(live.pushed_at)));
-  }
   card.appendChild(meta);
 
   const link = el("a", "repo-link", tr("card.link"));
   link.href = (live && live.html_url) || `https://github.com/${USER}/${item.repo}`;
+  link.target = "_blank";
   link.rel = "noopener";
   card.appendChild(link);
 
@@ -147,6 +136,8 @@ function render(liveByName) {
 document.addEventListener("languagechange", () => render(lastLive));
 
 async function load() {
+  const yearEl = document.getElementById("copyYear");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
   // Render immediately from the curated list so the page is never empty.
   render({});
   try {

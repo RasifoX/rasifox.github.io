@@ -24,7 +24,7 @@ const DICT = {
 
     "work.kicker": "Recent work",
     "work.h2": "Code I wrote and ship publicly",
-    "work.note": "Live from GitHub, so the language, stars, and last update are always current.",
+    "work.note": "Live from GitHub, so the language and stars are always current.",
 
     "services.kicker": "What I build",
     "services.h2": "Services and pricing",
@@ -76,12 +76,6 @@ const DICT = {
     "card.link": "View on GitHub",
     "card.star": "star",
     "card.stars": "stars",
-    "updated.today": "updated today",
-    "updated.days": "updated {n} days ago",
-    "updated.month": "updated {n} month ago",
-    "updated.months": "updated {n} months ago",
-    "updated.year": "updated {n} year ago",
-    "updated.years": "updated {n} years ago",
   },
   tr: {
     "meta.title": "RasifoX, web siteleri, botlar ve otomasyonlar için freelance yazılımcı",
@@ -103,7 +97,7 @@ const DICT = {
 
     "work.kicker": "Son işler",
     "work.h2": "Yazdığım ve herkese açık yayınladığım kodlar",
-    "work.note": "Doğrudan GitHub'dan geliyor; dil, yıldız sayısı ve son güncelleme her zaman günceldir.",
+    "work.note": "Doğrudan GitHub'dan geliyor; dil ve yıldız sayısı her zaman günceldir.",
 
     "services.kicker": "Neler yapıyorum",
     "services.h2": "Hizmetler ve fiyatlar",
@@ -155,12 +149,6 @@ const DICT = {
     "card.link": "GitHub'da görüntüle",
     "card.star": "yıldız",
     "card.stars": "yıldız",
-    "updated.today": "bugün güncellendi",
-    "updated.days": "{n} gün önce güncellendi",
-    "updated.month": "{n} ay önce güncellendi",
-    "updated.months": "{n} ay önce güncellendi",
-    "updated.year": "{n} yıl önce güncellendi",
-    "updated.years": "{n} yıl önce güncellendi",
   },
 };
 
